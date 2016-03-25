@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+body {
+  padding: 20px;
+}
+svg {
+  -webkit-box-shadow: 0 0 0 1px #ccc;
+          box-shadow: 0 0 0 1px #ccc;
+}
+form {
+  margin-bottom: 15px;
+}
+form > div + div {
+  margin-top: 5px;
+}
+label {
+  display: inline-block;
+  width: 110px;
+  text-align: right;
+}
+input[type="number"] {
+  width: 60px;
+}
+#description {
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+<form name="options">
+  <div>
+    <label for="N">Side count:</label>
+    <input id="N" name="N" type="range" min="3" max="20" value="6" onchange="formChanged()">
+    <input name="_N" type="number" min="3" max="20" value="6" onchange="_formChanged()">
+  </div>
+  <div>
+    <label for="L">Side length:</label>
+    <input id="L" name="L" type="range" min="10" max="200" value="64" onchange="formChanged()">
+    <input name="_L" type="number" min="10" max="200" value="64" onchange="_formChanged()">
+  </div>
+  <div>
+    <label for="R">Radius:</label>
+    <input id="R" name="R" type="range" min="0" max="100" value="10" onchange="formChanged()">
+    <input name="_R" type="number" min="0" max="100" value="10" onchange="_formChanged()">
+  </div>
+  <div>
+    <label for="padding">Padding:</label>
+    <input id="padding" name="padding" type="range" min="0" max="50" value="2" onchange="formChanged()">
+    <input name="_padding" type="number" min="0" max="50" value="2" onchange="_formChanged()">
+  </div>
+</form>
+<div id="container"></div>
+<div id="description"></div>
+<script src="index.js"></script>
+<script src="demo.js"></script>
+</body>
