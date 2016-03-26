@@ -2,8 +2,12 @@
 <html>
 <head>
 <meta charset="utf-8">
+<title>Rounded Polygon</title>
+<meta name="description" content="Create any size of regular rounded polygon.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <style type="text/css">
 body {
+  margin: 0;
   padding: 20px;
 }
 svg {
@@ -30,9 +34,18 @@ input[type="number"] {
 textarea {
   width: 100%;
 }
+h1 {
+  margin: 0 0 0.67em;
+}
+hr {
+  margin: 10px 0 20px;
+}
 </style>
 </head>
 <body>
+<h1>Rounded Polygon</h1>
+<p>Create any size of regular rounded polygon.</p>
+<hr />
 <form name="options">
   <div>
     <label for="N">Side count:</label>
@@ -57,7 +70,7 @@ textarea {
 </form>
 <div id="container"></div>
 <div id="description"></div>
-<textarea rows="3" id="textareaSvg" spellcheck="false"></textarea>
+<textarea rows="5" id="textareaSvg" spellcheck="false"></textarea>
 <script src="index.js"></script>
 <script src="demo.js"></script>
 </body>
