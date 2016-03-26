@@ -1,7 +1,6 @@
 (function(){
   var NS = {
-      xmlns: 'http://www.w3.org/2000/svg',
-      xlink: 'http://www.w3.org/1999/xlink'
+      xmlns: 'http://www.w3.org/2000/svg'
     },
     SVG_VERSION = '1.1';
 
@@ -32,7 +31,9 @@
 
   document.querySelector('#container').appendChild(svg);
 
-  var description = document.querySelector('#description');
+  var description = document.querySelector('#description'),
+      textareaSvg = document.querySelector('#textareaSvg');
+
   window.formChanged = function(){
     var elements = document.forms.options.elements,
         n = +elements.N.value,
@@ -43,10 +44,12 @@
     elements._L.value = l;
     elements._R.value = r;
     elements._padding.value = padding;
-    var polygon = RoundedPolygon(n, l, r, padding),
-        width = Math.ceil(polygon.width),
-        height = Math.ceil(polygon.height);
+    var polygon = roundedPolygon(n, l, r, padding),
+        width = polygon.width,
+        height = polygon.height;
+    // console.log(width, height);
     setAttrs(svg, {
+      xmlns: NS.xmlns,
       width: width,
       height: height
     });
@@ -54,6 +57,8 @@
       d: polygon.path
     });
     description.innerHTML = width + 'x' + height;
+
+    textareaSvg.value = svg.outerHTML;
   };
 
   window._formChanged = function(){
