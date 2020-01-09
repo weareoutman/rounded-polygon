@@ -104,6 +104,8 @@ function roundedPolygon(N, L, R, padding) {
       list.push('l' + x + ' ' + y);
     }
   });
+  
+  list.push('z');
 
   var path = list.join('');
 
